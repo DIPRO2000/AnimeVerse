@@ -1,4 +1,5 @@
-import { LINK } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Home, Compass, Tv } from 'lucide-react';
 
 const Footer = () => {
 

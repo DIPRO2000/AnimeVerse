@@ -5,13 +5,16 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Link, useLocation } from 'react-router-dom';
+import { Home, Compass, Tv, Search, Menu } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({mobileMenuOpen,setMobileMenuOpen}) => {
 
     const NAV_ITEMS = [
         { name: 'Home', icon: Home, page: '' },
         { name: 'Browse', icon: Compass, page: 'Browse' },
     ];
+
+    const location=useLocation()
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
@@ -37,7 +40,7 @@ const Navbar = () => {
                   <Button
                     variant="ghost"
                     className={`${
-                      currentPageName === item.page
+                      location.pathname === item.page
                         ? 'text-white bg-slate-800/50'
                         : 'text-slate-400 hover:text-white hover:bg-slate-800/30'
                     }`}
@@ -95,7 +98,7 @@ const Navbar = () => {
                         <Button
                           variant="ghost"
                           className={`w-full justify-start ${
-                            currentPageName === item.page
+                            location.pathname === item.page
                               ? 'text-white bg-slate-800/50'
                               : 'text-slate-400 hover:text-white hover:bg-slate-800/30'
                           }`}
@@ -130,3 +133,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+

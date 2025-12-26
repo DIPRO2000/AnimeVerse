@@ -10,6 +10,7 @@ import LoadingState from '@/components/anime/LoadingState';
 import ErrorState from '@/components/anime/ErrorState';
 import SearchFilters from '@/components/anime/SearchFilters';
 import AnimeService from '@/components/anime/AnimeService';
+import Header from '@/components/common/Header';
 
 // Hero featured anime card component
 function FeaturedAnimeCard({ anime }) {
@@ -127,6 +128,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-950">
+
+      <Header/>
+      
       {/* Hero Section */}
       {!isSearchActive && featuredAnime && (
         <div className="relative">

@@ -34,7 +34,7 @@ export default function Layout({ currentPageName }) {
   return (
     <div className="min-h-screen bg-slate-950">
       {/* Navigation */}
-      <Navbar/>
+      <Navbar mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen}/>
 
       {/* Main Content */}
       <main className="pt-16">
